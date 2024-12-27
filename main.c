@@ -109,12 +109,12 @@ void show_password_requirements(password secretKey) {
     printf("- Caracteres especiais: [%c]\n", secretKey.contains_special ? '*' : ' ');
     printf("- Dígitos presentes: [%c]\n", secretKey.contains_numbers ? '*' : ' ');
     printf("- Letras maiúsculas: [%c]\n", secretKey.contains_uppercase ? '*' : ' ');
-
+    putchar('\n');
     if (secretKey.security_level < 5) {
-        printf("- Nível de segurança: Baixo\n");
+        printf("- Nível de segurança: \033[0;31mBaixo\033[0m\n");
     } else if (secretKey.security_level <= 10) {
-        printf("- Nível de segurança: Médio\n");
+        printf("- Nível de segurança: \033[0;33mMédio\033[0m\n");
     } else {
-        printf("- Nível de segurança: Alto\n");
+        printf("- Nível de segurança: \033[0;32mAlto\033[0m\n");
     }
 }
